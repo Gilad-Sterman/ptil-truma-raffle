@@ -77,7 +77,8 @@ async function add(user, lang) {
 
         const userToAdd = {
             email: user.email,
-            createdAt: Date.now()
+            createdAt: Date.now(),
+            lang
         }
         const collection = await dbService.getCollection('truma_users')
         await collection.insertOne(userToAdd)
